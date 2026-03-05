@@ -15,7 +15,7 @@ app.use(authRoutes);
 app.use(pageRoutes);
 const PORT = Number(process.env.PORT || 3000);
 async function main() {
-await connectDB(process.env.MONGODB_URI as string);
+await connectDB(process.env.MONGODB_URI!);
 app.listen(PORT, () => console.log(`✅ http://localhost:${PORT}`));
 }
 main().catch((err) => {
